@@ -8,7 +8,7 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-from pkg_resources import get_distribution
+from importlib.metadata import version as get_version
 
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -50,7 +50,7 @@ project = u'morph-tool'
 # built documents.
 #
 # The short X.Y version.
-version = get_distribution('morph_tool').version
+version = get_version('morph_tool')
 # The full version, including alpha/beta/rc tags.
 release = version
 
