@@ -154,7 +154,7 @@ def _make_morph(dfs):
         for gid in _df[_df.id == -1].index:
             if _df.loc[gid, "u"] in _df.loc[_df.id > -1, "v"].to_list():
                 pts = PointLevel(_df.loc[gid, "points"], _df.loc[gid, "diameters"])
-                _id = int(_df.loc[_df["v"] == _df.loc[gid, "u"], "id"])
+                _id = int(_df.loc[_df["v"] == _df.loc[gid, "u"], "id"].item())
                 sec = morph.sections[_id].append_section(pts)
                 _df.loc[gid, "id"] = sec.id
     return morph

@@ -1,5 +1,4 @@
 from pathlib import Path
-import itertools as it
 import numpy as np
 import numpy.testing as npt
 
