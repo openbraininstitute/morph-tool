@@ -65,7 +65,7 @@ def convert():
 @click.option('--sanitize', is_flag=True, help='whether to sanitize the morphology')
 @click.option('--ensure-NRN-area', is_flag=True,
               help='whether to ensure area is preserved in NEURON from swc point soma')
-def file(input_file,
+def file(input_file,  # pylint: disable=too-many-positional-arguments
          output_file,
          quiet,
          recenter,
@@ -82,7 +82,7 @@ def file(input_file,
     )
 
 
-def _attempt_convert(
+def _attempt_convert(  # pylint: disable=R0917
     path, output_dir, extension, recenter, nrn_order, single_point_soma, sanitize, ensure_nrn_area
 ):
     """Function to be passed to dask.bag.map.
@@ -113,7 +113,7 @@ def _attempt_convert(
 @click.option('--ensure-NRN-area', is_flag=True,
               help='whether to ensure area is preserved in NEURON from swc point soma')
 @click.option('--ncores', help='The number of cores', default=None, type=int)
-def folder(input_dir,  # pylint: disable=too-many-arguments
+def folder(input_dir,  # pylint: disable=too-many-arguments,too-many-positional-arguments
            output_dir,
            extension,
            quiet,

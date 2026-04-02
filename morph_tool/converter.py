@@ -321,7 +321,7 @@ def convert_soma(neuron, output_ext, ensure_NRN_area=False):
                 cylinder_to_cylindrical_contour(neuron)
 
 
-def convert(input_file,
+def convert(input_file,  # pylint: disable=too-many-positional-arguments
             output_file,
             recenter=False,
             nrn_order=False,
