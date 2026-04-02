@@ -137,7 +137,7 @@ def simplify_morphology(morph, epsilon):
         section.points = points[keep_mask]
         section.diameters = section.diameters[keep_mask]
 
-        if section.perimeters:
+        if hasattr(section, "perimeters") and len(section.perimeters):
             section.perimeters = section.perimeters[keep_mask]
 
     return morph

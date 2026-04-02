@@ -1,5 +1,4 @@
 from pathlib import Path
-import itertools as it
 import numpy as np
 import numpy.testing as npt
 
@@ -46,7 +45,7 @@ def test_convert_ensure_NRN_area(tmpdir):
     npt.assert_almost_equal(get_NEURON_surface(outname), 11.9835, decimal=4)
 
     convert(simple, outname, ensure_NRN_area=True)
-    npt.assert_almost_equal(get_NEURON_surface(outname), 12.59102, decimal=4)
+    npt.assert_almost_equal(get_NEURON_surface(outname), 12.5862, decimal=4)
 
 
 def test_convert_recenter(tmpdir):

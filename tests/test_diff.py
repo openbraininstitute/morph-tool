@@ -1,5 +1,4 @@
 from pathlib import Path
-from pkg_resources import get_distribution, parse_version
 
 from morph_tool import diff
 from morphio import PointLevel, SectionType, Warning, set_ignored_warning
@@ -118,10 +117,7 @@ def test_equality():
                             'have the same shape but different values',
                             'Vector diameters differs at index 0: 3.0 != 0.0']))
 
-    # Check result for MorphIO < 3
+    # Check result for MorphIO >= 3 (single_child.asc differs from not_single_child.asc)
     result = diff(DATA / 'single_child.asc', DATA / 'not_single_child.asc')
-    if parse_version(get_distribution("morphio").version) < parse_version("3"):
-        assert not result
-    else:
-        assert result
+    assert result
     set_ignored_warning([Warning.wrong_duplicate, Warning.only_child], False)
