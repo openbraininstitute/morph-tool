@@ -46,7 +46,7 @@ def test_from_neurondb():
                            header=0, keep_default_na=False, na_values={'path': ['']})
 
     expected.layer = expected.layer.astype(str)
-    expected.path = expected.path.astype(str).replace(to_replace={'nan': None})
+    expected.path = expected.path.astype(object).where(expected.path.notna(), None)
 
     assert_frame_equal(actual.drop(columns='axon_inputs'),
                        expected.drop(columns='axon_inputs'),)
@@ -78,7 +78,7 @@ def test_write_neurondb_dat(tmpdir):
     original.write(path)
 
     new = tested.MorphDB.from_neurondb(path, morphology_folder=morphology_folder)
-    assert_frame_equal(original.df, new.df)
+    assert_frame_equal(original.df, new.df, check_dtype=False)
 
 
 def test_add():

@@ -192,7 +192,9 @@ class MorphDB:
         for missing_col in set(COLUMNS) - set(obj.df.columns):
             obj.df[missing_col] = None
             obj.df.layer = obj.df.layer.astype('str')
-            obj.df['path'] = obj.df['name'].map(morph_paths)
+            obj.df["path"] = (
+                obj.df["name"].map(morph_paths).where(lambda s: s.notna(), None)
+            )
             obj.df = obj.df.reindex(columns=COLUMNS)
         for key in BOOLEAN_REPAIR_ATTRS:
             obj.df[key] = True
