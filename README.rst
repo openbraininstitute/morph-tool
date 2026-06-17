@@ -318,6 +318,7 @@ morph-tool is licensed under the terms of the GNU Lesser General Public License 
 Refer to COPYING.LESSER and COPYING for details.
 
 Copyright (c) 2018-2024 Blue Brain Project/EPFL
+Copyright (c) 2025 Open Brain Institute
 
 .. |docs| image:: https://readthedocs.org/projects/morph-tool/badge/?version=latest
              :target: https://morph-tool.readthedocs.io/
