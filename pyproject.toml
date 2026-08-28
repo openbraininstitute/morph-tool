@@ -30,7 +30,7 @@ plot = ["plotly>=4.1.0"]
 parallel = ["dask[bag]>=2.19.0"]
 nrn = ["neuron>=7.8", "bluepyopt>=1.9.37"]
 all = ["plotly>=4.1.0", "dask[bag]>=2.19.0", "neuron>=7.8", "bluepyopt>=1.9.37"]
-docs = ["sphinx<9", "sphinx-bluebrain-theme"]
+docs = ["sphinx>=8.2,<10", "obi-sphinx-theme>=2.0.0"]
 
 [project.scripts]
 morph-tool = "morph_tool.cli:cli"
