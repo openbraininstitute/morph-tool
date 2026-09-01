@@ -140,7 +140,7 @@ Soma intricacies
 
 Multiple formats are being used to represent somas (mainly) depending on
 the file format. For more information about file format, see the `neuromorpho.org specification <http://neuromorpho.org/SomaFormat.html>`__ or `MorphIO
-specification <https://github.com/BlueBrain/MorphIO/blob/master/doc/specification.md#soma-formats>`__
+specification <https://github.com/openbraininstitute/MorphIO/blob/master/doc/specification.md#soma-formats>`__
 
 Because different soma format represent soma in different planes, soma
 format conversion is not a bijective transformation. For example, it is

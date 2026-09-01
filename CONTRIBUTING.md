@@ -90,4 +90,4 @@ repository:
     ```shell
     git pull --ff upstream master
     ```
-[github]: https://github.com/BlueBrain/morph-tool
+[github]: https://github.com/openbraininstitute/morph-tool
